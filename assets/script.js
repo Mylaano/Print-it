@@ -19,15 +19,14 @@ const slides = [
 
 // Ajout des événements pour les flèches de gauche et droite
 
-const 
-	arrowLeft = document.querySelector(".arrow_left"),
-	arrowRight = document.querySelector(".arrow_right");
+const arrowLeft = document.querySelector(".arrow_left");
+const arrowRight = document.querySelector(".arrow_right");
 
 let dotSelected = 0;
 
 function slideImage(dotId) {
 	const bannerImg = document.querySelector(".banner-img");
-	bannerImg.src = "./assets/images/slideshow/" + slides[dotId]['image'];
+	bannerImg.src = `./assets/images/slideshow/${slides[dotId].image}`;
 
 	const bannerId = document.getElementById("banner");
 	const text = bannerId.getElementsByTagName("p");
@@ -68,8 +67,8 @@ arrowRight.addEventListener('click', () => {
 
 const dotContenair = document.querySelector(".dots");
 
-for(let i = 0; i < slides.length; i++) {
-	let divDot = dotContenair.appendChild(document.createElement('div'));
+for (const slide of slides) {
+	const divDot = dotContenair.appendChild(document.createElement('div'));
 	divDot.classList.add("dot");
 }
 
