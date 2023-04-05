@@ -40,7 +40,7 @@ arrowLeft.addEventListener('click', () => {
 	dotSelected--;
 
 	if(dotSelected < 0) {
-		dotSelected = 3;
+		dotSelected = slides.length-1;
 	}
 
 	test[dotSelected].classList.add("dot_selected");
@@ -54,7 +54,7 @@ arrowRight.addEventListener('click', () => {
 	test[dotSelected].classList.remove("dot_selected");
 	dotSelected++;
 
-	if(dotSelected > 3) {
+	if(dotSelected > slides.length-1) {
 		dotSelected = 0;
 	}
 
